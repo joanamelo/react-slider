@@ -46,10 +46,6 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
 	var _fullsection = __webpack_require__(1);
 
 	var _fullsection2 = _interopRequireDefault(_fullsection);
@@ -58,7 +54,9 @@
 
 	// const Slider = require('./fullsection.jsx');
 
-	exports.default = _fullsection2.default;
+	// export default Slider;
+
+	module.exports = _fullsection2.default;
 
 /***/ },
 /* 1 */
