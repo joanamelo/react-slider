@@ -1,4 +1,4 @@
-import Slider from './fullsection.jsx';
+import Slider from './fullsection';
 // const Slider = require('./fullsection.jsx');
 
 export default Slider;
