@@ -1,23 +1,25 @@
 module.exports = {
-  loaders: [
-    {
-      test: /\.js$/,
-      exclude: /(node_modules|bower_components)/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015']
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        query: {
+          presets: [
+            'es2015',
+            'react',
+            'stage-0'
+          ]
+        }
       }
-    },
-    {
-      test: /\.jsx$/,
-      exclude: /(node_modules|bower_components)/,
-      loader: 'babel-loader',
-      query: {
-        presets: [
-          'es2015',
-          // 'react',
-        ]
-      }
-    }
-  ]
+    ]
+  },
+  output: {
+    path: 'dist/',
+    filename: '[name].js'
+  },
+  entry: {
+    index: './index.js'
+  }
 }

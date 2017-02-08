@@ -1,5 +1,6 @@
 Example usage:
 
+```html
 <Slider scrollingSpeed={ 10 }
     touchSensitivity={ 5 }
     scrollingSpeed={ 500 }
@@ -10,3 +11,4 @@ Example usage:
     notifyCurrent={ (idx) => notifyCurrent(idx) }>
         ... content ...
 </Slider>
+```
