@@ -1,5 +1,5 @@
 {
-  "name": "react-slider",
+  "name": "react-section-slider",
   "version": "0.0.1",
   "description": "Full page slider for pages with content around it.",
   "main": "lib/react-slider.js",
