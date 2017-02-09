@@ -169,9 +169,7 @@ class Slider extends PureComponent {
 
         this.currentSlide = idx;
 
-        console.log('start scroll to');
         scrollToY(this.slides[idx], scrollingSpeed, 'easeOutSine', () => {
-            console.log('end scroll to');
             setTimeout(() => {
                 // reallow new scrolling actions
                 this.scrollPending = false;
@@ -183,7 +181,6 @@ class Slider extends PureComponent {
     // or on each scroll on iOS, because the browser header
     // changes with scroll downs and ups
     updateSlidesOffsets() {
-        console.log('will update slides');
         const slides = [];
 
         for (let i = 0; i < this.props.total; i += 1) {
@@ -191,7 +188,6 @@ class Slider extends PureComponent {
         }
 
         this.slides = slides;
-        console.log('updated slides');
     }
 
     // setter for current active slide idx
@@ -389,7 +385,6 @@ class Slider extends PureComponent {
 
         if (Math.abs(this.startTouchPosition.y - this.endTouchPosition.y) > (window.innerHeight / 100 * this.state.touchSensitivity)) {
             this.updateSlidesOffsets();
-            console.log('will slide');
             if (this.startTouchPosition.y > this.endTouchPosition.y) {
                 // block subsequent scrolls while performing current one
                 this.scrollPending = true;
