@@ -16,8 +16,9 @@ module.exports = {
     ]
   },
   output: {
-    path: 'dist/',
-    filename: '[name].js'
+    path: 'lib/',
+    filename: 'react-slider.js',
+    libraryTarget: 'commonjs2'
   },
   entry: {
     index: './index.js'
