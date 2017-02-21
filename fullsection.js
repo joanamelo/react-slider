@@ -146,6 +146,10 @@ class Slider extends PureComponent {
     // infer from current scroll position which slide should be active
     // and move there
     moveToSlideInViewPort() {
+        if (!this.slidesElem) {
+            return;
+        }
+
         let currentSlide = 0;
         // find out the initial page offset to infer the current slide
         const offset = this.slides[0] - this.slidesElem.getBoundingClientRect().top;
@@ -205,9 +209,13 @@ class Slider extends PureComponent {
 
     // validate if viewport is completely in slides area
     isInViewPort() {
+        if (!this.slidesElem) {
+            return;
+        }
+
         const slidesPosition = {
-            start: this.slidesElem.getBoundingClientRect().top,
-            end: this.slidesElem.getBoundingClientRect().bottom,
+            start: Math.round(this.slidesElem.getBoundingClientRect().top),
+            end: Math.round(this.slidesElem.getBoundingClientRect().bottom),
         };
 
         return (slidesPosition.start <= 0 && slidesPosition.end > window.innerHeight) ||
@@ -250,6 +258,8 @@ class Slider extends PureComponent {
     // needed because safari mac calls onload too soon and
     // slides positioning is not final yet
     onInitialScroll() {
+        this.updateSlidesOffsets();
+
         if (this.isInViewPort()) {
             // is inside slides area
             this.moveToSlideInViewPort();
