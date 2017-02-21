@@ -1,6 +1,6 @@
 {
   "name": "react-section-slider",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Full page slider for pages with content around it.",
   "main": "lib/react-slider.js",
   "files": [
